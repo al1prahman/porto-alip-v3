@@ -45,28 +45,29 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Sisa Konten Hero Sama Seperti Sebelumnya */}
-      <h2 className="text-3xl font-light text-gray-800 mb-6">
-        Software Developer — <span className="text-gray-400">Laravel & React</span>
+      {/* Identitas */}
+      <h2 className="text-3xl font-light text-gray-800 dark:text-gray-200 mb-6 transition-colors">
+        Software Developer — <span className="text-gray-400 dark:text-gray-500">Laravel & React</span>
       </h2>
       
-      <p className="text-gray-500 leading-relaxed mb-8 text-lg">
+      <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8 text-lg transition-colors">
         Saya adalah pengembang perangkat lunak yang membangun situs web dan sistem backend menggunakan{' '}
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 bg-gray-50 text-sm text-red-600">
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-sm text-red-600 dark:text-red-400">
           Laravel
         </span>
         ,{' '}
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 bg-gray-50 text-sm text-blue-500">
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-sm text-blue-500 dark:text-blue-400">
           React
         </span>
         {' '}dan{' '}
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 bg-gray-50 text-sm text-yellow-600">
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-sm text-yellow-600 dark:text-yellow-400">
           Python
         </span>
         . Saya memiliki ketertarikan kuat dalam eksplorasi arsitektur sistem cerdas, termasuk implementasi <i>computer vision</i> dan integrasi <i>machine learning</i> (seperti model YOLO) ke dalam aplikasi berbasis web.
       </p>
 
-      <button className="bg-[#111] hover:bg-black text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 transition-all">
+      {/* Tombol Resume */}
+      <button className="bg-[#111] dark:bg-white hover:bg-black dark:hover:bg-gray-200 text-white dark:text-black px-6 py-3 rounded-xl font-medium flex items-center gap-2 transition-all">
         View Resume <span>→</span>
       </button>
     </main>

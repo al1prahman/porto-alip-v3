@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider"; // Import Provider
 
 export const metadata: Metadata = {
-  title: "Alwan Danny Latif - Portfolio",
+  title: "Alip Rahman - Portfolio",
   description: "Software Developer Portfolio",
 };
 
