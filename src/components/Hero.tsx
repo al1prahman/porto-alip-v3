@@ -49,23 +49,23 @@ export default function Hero() {
       </div>
 
       <h2 className="text-3xl font-light text-gray-800 dark:text-gray-200 mb-6 transition-colors">
-        Software Developer — <span className="text-gray-400 dark:text-gray-500">Laravel & React</span>
+        AI & Fullstack Developer — <span className="text-gray-400 dark:text-gray-500">Python & React</span>
       </h2>
       
       <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8 text-lg transition-colors">
-        Saya adalah pengembang perangkat lunak yang membangun situs web dan sistem backend menggunakan{' '}
+        I am a Junior AI Engineer and Full-Stack Developer with a strong passion for {' '}
         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-sm text-red-600 dark:text-red-400">
-          Laravel
+          Python
         </span>
         ,{' '}
         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-sm text-blue-500 dark:text-blue-400">
           React
         </span>
-        {' '}dan{' '}
+        {' '}and{' '}
         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-sm text-yellow-600 dark:text-yellow-400">
-          Python
+          YOLO
         </span>
-        . Saya memiliki ketertarikan kuat dalam eksplorasi arsitektur sistem cerdas, termasuk implementasi <i>computer vision</i> dan integrasi <i>machine learning</i> (seperti model YOLO) ke dalam aplikasi berbasis web.
+        . I have a keen interest in and a thirst for keeping up with the ever evolving landscape of technology. I am currently focused on completing my education while continuing to hone my skills.
       </p>
 
       {/* Tombol Resume */}

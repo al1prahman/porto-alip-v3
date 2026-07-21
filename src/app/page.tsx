@@ -5,8 +5,9 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Technologies from "@/components/Technologies";
+import Education from "@/components/Education"; // <-- Import komponen baru
 import Activity from "@/components/Activity";
-import Contact from "@/components/Contact"; // <-- Import komponen Contact
+import Contact from "@/components/Contact";
 import UserCursor from "@/components/UserCursor";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -40,9 +41,11 @@ export default function Home() {
       <Projects />
       <Experience />
       <Technologies />
-      <Activity />
       
-      {/* Tambahkan komponen Contact di posisi terbawah */}
+      {/* Tambahkan Education di sini */}
+      <Education /> 
+      
+      <Activity />
       <Contact />
       
     </div>

@@ -75,7 +75,7 @@ export default function Contact() {
             "Repetition until it becomes technique."
           </p>
           <p className="text-sm text-gray-400 dark:text-gray-500">
-            <span className="font-medium text-gray-800 dark:text-gray-200">Alwan Danny Latif</span> <span className="mx-1">/</span> Still sharpening <span className="mx-1">/</span> Semarang, ID
+            <span className="font-medium text-gray-800 dark:text-gray-200">Alif Rahman Maulana</span> <span className="mx-1">/</span> Still sharpening <span className="mx-1">/</span> Semarang, ID
           </p>
         </div>
         
