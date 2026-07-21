@@ -1,6 +1,6 @@
 "use client";
 
-import Stack from "./Stack";
+import Stack from "./stack";
 
 export default function Activity() {
   const images = [

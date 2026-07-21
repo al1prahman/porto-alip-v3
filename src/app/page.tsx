@@ -5,7 +5,8 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Technologies from "@/components/Technologies";
-import Activity from "@/components/Activity"; // <-- Import komponen Activity
+import Activity from "@/components/Activity";
+import Contact from "@/components/Contact"; // <-- Import komponen Contact
 import UserCursor from "@/components/UserCursor";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -39,12 +40,11 @@ export default function Home() {
       <Projects />
       <Experience />
       <Technologies />
-      
-      {/* Tambahkan komponen Activity di sini */}
       <Activity />
       
-      {/* Spacer kecil di bawah agar tidak mentok saat di-scroll ke paling bawah */}
-      <div className="h-20"></div>
+      {/* Tambahkan komponen Contact di posisi terbawah */}
+      <Contact />
+      
     </div>
   );
 }
