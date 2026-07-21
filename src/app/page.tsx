@@ -3,8 +3,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
-import Experience from "@/components/Experience"; // Import Experience
-import Technologies from "@/components/Technologies"; // Import Technologies
+import Experience from "@/components/Experience";
+import Technologies from "@/components/Technologies";
+import Activity from "@/components/Activity"; // <-- Import komponen Activity
 import UserCursor from "@/components/UserCursor";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -36,10 +37,11 @@ export default function Home() {
       <Header />
       <Hero />
       <Projects />
-      
-      {/* Tambahkan komponen baru di sini */}
       <Experience />
       <Technologies />
+      
+      {/* Tambahkan komponen Activity di sini */}
+      <Activity />
       
       {/* Spacer kecil di bawah agar tidak mentok saat di-scroll ke paling bawah */}
       <div className="h-20"></div>
