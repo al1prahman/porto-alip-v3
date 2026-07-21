@@ -17,11 +17,17 @@ export default function Experience() {
       location: "Semarang",
     },
     {
-      date: "Jul 2025 - Dec 2025",
+      date: "Dec 2025 - Feb 2025",
       role: "Full Stack Developer Intern",
       company: "KB - TK Permata Ceria Bangsa",
       location: "Semarang",
     },
+    {
+      date: "Jul 2025 - Aug 2025",
+      role: "Head of Production Documentary Film",
+      company: "Internship Program Diskominfo Kota Semarang",
+      location: "Semarang",  
+    }
   ];
 
   return (
