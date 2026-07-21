@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
-      date: "Mar 2026 - Aug 2026",
-      role: "Software Engineer",
-      company: "Koperasi Merah Putih",
-      location: "Semarang (On-site)",
+      date: "Mar 2026 - Sept 2026",
+      role: "Fullstack Developer",
+      company: "Koperasi Desa Merah Putih",
+      location: "Ambarawa (Hybrid)",
     },
     {
-      date: "2026 - Present",
-      role: "Founder & Full-Stack Developer",
-      company: "SumGarden",
+      date: "Jul 2025 - Dec 2025",
+      role: "Web Developer Intern",
+      company: "Diskominfo Kota Semarang",
       location: "Semarang",
     },
     {
-      date: "2025 - 2026",
-      role: "Web Developer Intern",
-      company: "Diskominfo Kota Semarang",
+      date: "Jul 2025 - Dec 2025",
+      role: "Full Stack Developer Intern",
+      company: "KB - TK Permata Ceria Bangsa",
       location: "Semarang",
     },
   ];

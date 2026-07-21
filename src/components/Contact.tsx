@@ -10,10 +10,10 @@ export default function Contact() {
         {/* Kolom Kiri: Teks & Deskripsi */}
         <div className="md:w-1/2">
           <h2 className="text-4xl font-light text-gray-900 dark:text-gray-100 mb-5">
-            Let's work together.
+            We Can Build Something Together
           </h2>
           <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">
-            Available for freelance web development — Laravel, React, and full-stack builds. Also open to exploring intelligent systems, computer vision, and machine learning integrations for your business needs.
+            Willing to work together in a team or as an intern, and also open to discussions or simply hanging out and chatting
           </p>
         </div>
 
@@ -55,10 +55,10 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-[10px] font-bold tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-0.5">
-                  Let's Talk
+                  Send Me a Message
                 </p>
                 <p className="text-gray-900 dark:text-gray-100 font-medium">
-                  Schedule a Call
+                  Whatsapp
                 </p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Contact() {
       <div className="mt-24 pt-8 border-t border-dashed border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
           <p className="text-gray-400 dark:text-gray-500 italic mb-2">
-            "Repetition until it becomes technique."
+            "So Surely, with Hardship come Ease" 
           </p>
           <p className="text-sm text-gray-400 dark:text-gray-500">
             <span className="font-medium text-gray-800 dark:text-gray-200">Alif Rahman Maulana</span> <span className="mx-1">/</span> Still sharpening <span className="mx-1">/</span> Semarang, ID

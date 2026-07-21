@@ -10,7 +10,7 @@ export default function Activity() {
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop"  // Ilustrasi Workspace/Tugas Akhir
   ];
 
-  const tags = ["Co-op Gaming", "Culinary Business", "Anime", "AI Exploration"];
+  const tags = ["Gaming", "Hangout", "Movies" ];
 
   return (
     <section id="activity" className="max-w-3xl mx-auto px-4 md:px-8 py-20 relative z-10">
@@ -22,7 +22,7 @@ export default function Activity() {
             Outside the IDE
           </h2>
           <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8 text-lg">
-            When I step away from the tech world building information systems or optimizing dwell time tracking models, I recharge through cooperative gaming sessions, managing my dimsum mentai business, and enjoying anime series, returning to my projects with fresh energy and perspective.
+            After spending the whole day sitting in front of a laptop just typing code, it feels natural to get tired and want to do something else—like playing games, watching movies, hanging out, and so on.
           </p>
           
           <div className="flex flex-wrap gap-3">

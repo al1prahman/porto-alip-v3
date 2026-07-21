@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 export default function Education() {
   const education = [
     {
-      date: "2022 - 2026",
-      degree: "Sarjana Komputer (S.Kom) / Teknik Informatika", // Silakan sesuaikan dengan gelar/jurusan asli Anda
-      university: "Universitas [Nama Kampus Anda]",
+      date: "2023 - 2026",
+      degree: "Associate Degree (A.Md.Kom) / Informatics Engineering", // Silakan sesuaikan dengan gelar/jurusan asli Anda
+      university: "Semarang State Polytechnic (Politeknik Negeri Semarang)",
       location: "Semarang, Indonesia",
     }
   ];

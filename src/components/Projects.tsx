@@ -22,22 +22,22 @@ export default function Projects() {
   const myProjects = {
     itemCount: 4,
     item1: {
-      text: "Koperasi Merah Putih (AI & Dwell Time)",
+      text: "Smart Counter using Machine Learning (AI & Dwell Time)",
       image: { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" },
       link: "#",
     },
     item2: {
-      text: "Smart PCB - KB-TK Permata",
+      text: "Integrated Preschool Administration System and Monitoring Student",
       image: { src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" },
       link: "#",
     },
     item3: {
-      text: "SumGarden E-Commerce",
+      text: "Fiber Optic Network Management",
       image: { src: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop" },
       link: "#",
     },
     item4: {
-      text: "Apparel Branding Website",
+      text: "Internship Management App ( Campus Project )",
       image: { src: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=800&auto=format&fit=crop" },
       link: "#",
     },
