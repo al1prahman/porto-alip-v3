@@ -20,7 +20,7 @@ export default function Projects() {
   const dimColor = isDark ? "#444444" : "#CCCCCC";
 
   const myProjects = {
-    itemCount: 4,
+    itemCount: 5,
     item1: {
       text: "Smart Counter using Machine Learning (AI & Dwell Time)",
       image: { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" },
@@ -39,6 +39,11 @@ export default function Projects() {
     item4: {
       text: "Internship Management App ( Campus Project )",
       image: { src: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=800&auto=format&fit=crop" },
+      link: "#",
+    },
+    item5: {
+      text: "Ai Expense Tracker ( Machine Learning",
+      image: { src: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop" },
       link: "#",
     },
   };

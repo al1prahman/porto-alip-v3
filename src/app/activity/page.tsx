@@ -47,9 +47,9 @@ export default function ActivityPage() {
           ← Back to Home
         </Link>
         
-        <h1 className="text-4xl font-light mb-4">Events</h1>
+        <h1 className="text-4xl font-light mb-4">My Daily maybe?</h1>
         <p className="text-gray-500 dark:text-gray-400 mb-12 text-lg">
-          Photos from events, meetups, and moments outside the IDE.
+          Some photos i took from my activity like seminar, hangout, gaming, videography, and etc.
         </p>
 
         <div className="w-full h-[800px]">
