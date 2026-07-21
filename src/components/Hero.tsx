@@ -1,25 +1,42 @@
 import Image from 'next/image';
-// Import baru menggunakan react-icons
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { MdVerified } from 'react-icons/md';
+import PixelTransition from './PixelTransition'; // Import komponen baru
 
 export default function Hero() {
   return (
     <main className="max-w-3xl mx-auto px-4 md:px-8 py-20 flex flex-col items-start text-left">
       <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100 shadow-sm shrink-0">
-          <img 
-            src="/avatar.png" 
-            alt="Profile Avatar" 
-            className="w-full h-full object-cover"
+        
+        {/* Kontainer Avatar Bulat */}
+        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100 shadow-sm shrink-0 cursor-pointer">
+          <PixelTransition
+            firstContent={
+              <img 
+                src="/avatar2.jpg" 
+                alt="Profile Avatar" 
+                className="w-full h-full object-cover"
+              />
+            }
+            secondContent={
+              <img 
+                src="/avatar.png" 
+                alt="Profile Avatar Hover" 
+                className="w-full h-full object-cover"
+              />
+            }
+            gridSize={12} // Anda bisa mengubah kerapatan grid piksel di sini
+            pixelColor="#ffffff" // Warna piksel saat transisi
+            animationStepDuration={0.4} // Kecepatan animasi
+            className="w-full h-full"
+            aspectRatio="100%"
           />
         </div>
+
         <div>
-          {/* Ubah pemanggilan ikon BadgeCheck menjadi MdVerified */}
           <h1 className="text-3xl font-bold flex items-center gap-2 mb-2 text-gray-900">
             Alif Rahman <MdVerified className="text-blue-500" size={24} />
           </h1>
-          {/* Ubah pemanggilan ikon sosial media */}
           <div className="flex gap-4 text-gray-500">
             <a href="#" className="hover:text-black transition-colors"><FiGithub size={20} /></a>
             <a href="#" className="hover:text-black transition-colors"><FiLinkedin size={20} /></a>
@@ -28,6 +45,7 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Sisa Konten Hero Sama Seperti Sebelumnya */}
       <h2 className="text-3xl font-light text-gray-800 mb-6">
         Software Developer — <span className="text-gray-400">Laravel & React</span>
       </h2>
