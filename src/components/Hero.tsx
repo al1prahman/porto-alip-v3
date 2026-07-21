@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
         <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100 shadow-sm shrink-0">
           <img 
-            src="/avatar.jpg" 
+            src="/avatar.png" 
             alt="Profile Avatar" 
             className="w-full h-full object-cover"
           />
