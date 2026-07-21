@@ -63,10 +63,16 @@ export default function UserCursor({
   style,
 }: Props) {
   const fullScreen = true;
-  const hideOnTouch = true;
+  const hideOnTouch = false; // 1. UBAH MENJADI FALSE (Agar tetap muncul di laptop layar sentuh)
   const zIndex = 9999;
 
   const isStatic = useIsStaticRenderer();
+  
+  // 2. TAMBAHKAN HYDRATION FIX UNTUK NEXT.JS
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   useEffect(() => {
@@ -209,6 +215,8 @@ export default function UserCursor({
       window.addEventListener("mousemove", onMove);
       window.addEventListener("mousedown", onDown);
       window.addEventListener("mouseup", onUp);
+      document.addEventListener("mouseleave", onLeave);
+      document.addEventListener("mouseenter", onEnter);
     } else {
       const el = container!;
       el.addEventListener("mousemove", onMove as EventListener);
@@ -223,6 +231,8 @@ export default function UserCursor({
         window.removeEventListener("mousemove", onMove);
         window.removeEventListener("mousedown", onDown);
         window.removeEventListener("mouseup", onUp);
+        document.removeEventListener("mouseleave", onLeave);
+        document.removeEventListener("mouseenter", onEnter);
       } else {
         const el = container!;
         el.removeEventListener("mousemove", onMove as EventListener);
@@ -329,7 +339,7 @@ export default function UserCursor({
     );
   }, [label, name, textColor, size, classNames?.labelText]);
 
-  if (isTouchDevice) return null;
+if (!mounted || isTouchDevice) return null;
 
   const hostStyle: React.CSSProperties = {
     position: "fixed",

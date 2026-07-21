@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between py-6 max-w-4xl mx-auto px-4 md:px-8 border-b border-gray-100 dark:border-gray-800">
-      <div className="font-bold text-lg tracking-tight dark:text-white">ADL</div>
+      <div className="font-bold text-lg tracking-tight dark:text-white">Alip</div>
       <nav className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
         <Link href="#projects" className="hover:text-black dark:hover:text-white transition-colors">Projects</Link>
         <Link href="#experience" className="hover:text-black dark:hover:text-white transition-colors">Experience</Link>
