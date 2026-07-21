@@ -1,7 +1,10 @@
 // Reactive Lines — Originkit
 // Props set in the preview:
-//   backgroundColor: "#FFFFFF"
-//   lineColor: "#000000"
+//   lineWidth: 0.5
+//   minLines: 80
+//   maxLines: 2
+//   fade: true
+//   fadeIntensity: 50
 
 "use client";
 
