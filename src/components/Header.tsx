@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="max-w-3xl mx-auto px-4 md:px-8 py-8 flex justify-between items-center relative z-10">
       <Link href="/" className="font-bold text-xl tracking-tight cursor-none">
-        ADL
+        ALIP
       </Link>
       
       <nav className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
