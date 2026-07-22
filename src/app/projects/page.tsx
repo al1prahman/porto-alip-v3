@@ -1,7 +1,6 @@
 "use client";
 
 import Header from "@/components/Header";
-import BorderGlow from "@/components/BorderGlow";
 import UserCursor from "@/components/UserCursor";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -63,31 +62,31 @@ export default function ProjectsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((proj) => (
-            <Link href={`/projects/${proj.slug}`} key={proj.slug} className="cursor-none block">
-              <BorderGlow 
-                animated={true} 
-                edgeSensitivity={50}
-                backgroundColor="transparent"
-                colors={['#6366f1', '#a855f7', '#ec4899']}
-                className="h-full bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-2xl overflow-hidden group"
-              >
-                <div className="p-4 flex flex-col h-full">
-                  <div className="w-full h-48 rounded-xl overflow-hidden mb-4 bg-gray-100 dark:bg-black">
-                    <img src={proj.img} alt={proj.title} className="w-full h-full object-cover" />
-                  </div>
-                  <h2 className="text-xl font-medium mb-2 text-gray-900 dark:text-white">{proj.title}</h2>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-6 flex-grow">{proj.desc}</p>
-                  
-                  <div className="flex justify-between items-center mt-auto">
-                    <div className="flex gap-2 text-gray-400">
-                      {proj.icons}
-                    </div>
-                    <span className="text-xs tracking-widest uppercase font-bold text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">
-                      Details →
-                    </span>
-                  </div>
+            <Link href={`/projects/${proj.slug}`} key={proj.slug} className="cursor-none block group h-full">
+              {/* PERBAIKAN: Mengganti BorderGlow dengan div card minimalis */}
+              <div className="h-full bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-2xl overflow-hidden p-4 flex flex-col transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm">
+                
+                <div className="w-full h-48 rounded-xl overflow-hidden mb-4 bg-gray-100 dark:bg-black">
+                  <img 
+                    src={proj.img} 
+                    alt={proj.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
                 </div>
-              </BorderGlow>
+                
+                <h2 className="text-xl font-medium mb-2 text-gray-900 dark:text-white transition-colors">{proj.title}</h2>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mb-6 flex-grow transition-colors">{proj.desc}</p>
+                
+                <div className="flex justify-between items-center mt-auto">
+                  <div className="flex gap-2 text-gray-400">
+                    {proj.icons}
+                  </div>
+                  <span className="text-xs tracking-widest uppercase font-bold text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">
+                    Details →
+                  </span>
+                </div>
+
+              </div>
             </Link>
           ))}
         </div>

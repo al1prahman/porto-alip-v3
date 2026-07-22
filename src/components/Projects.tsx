@@ -42,7 +42,7 @@ export default function Projects() {
       link: "#",
     },
     item5: {
-      text: "Ai Expense Tracker ( Machine Learning",
+      text: "Ai Expense Tracker ( Machine Learning )",
       image: { src: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop" },
       link: "#",
     },
