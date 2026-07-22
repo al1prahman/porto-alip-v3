@@ -25,35 +25,35 @@ export default function ProjectsPage() {
       slug: "smart-counter",
       title: "Smart Counter using Machine Learning (AI & Dwell Time)",
       desc: "Automated visitor tracking system utilizing YOLO and computer vision to analyze dwell time.",
-      img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
+      img: "/projects/smartcounter.png", // Foto asli aplikasi
       icons: [<SiPython key="py" />, <SiMysql key="db" />]
     },
     {
       slug: "preschool-admin",
       title: "Integrated Preschool Administration System and Monitoring Student",
       desc: "Smart PCB system designed for comprehensive academic and administrative management.",
-      img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop",
+      img: "/projects/smartpcb1.jpg", // Foto asli aplikasi
       icons: [<SiLaravel key="laravel" />, <SiReact key="react" />]
     },
     {
       slug: "fiber-optic",
       title: "Fiber Optic Network Management",
       desc: "Web-based infrastructure management tool for mapping and maintaining fiber optic networks.",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
+      img: "/projects/fiber2.jpg", // Foto asli aplikasi
       icons: [<SiLaravel key="laravel" />, <SiTailwindcss key="tw" />]
     },
     {
       slug: "internship-app",
       title: "Internship Management App ( Campus Project )",
       desc: "A centralized platform to manage university student internships, reporting, and evaluations.",
-      img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
+      img: "/projects/sitama4.jpg", // Foto asli aplikasi
       icons: [<SiReact key="react" />, <SiTailwindcss key="tw" />]
     },
     {
       slug: "ai-expense",
       title: "Ai Expense Tracker ( Machine Learning )",
       desc: "Intelligent financial tracker that categorizes expenses autonomously using machine learning models.",
-      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", // Tetap menggunakan placeholder sementara
       icons: [<SiPython key="py" />, <SiReact key="react" />]
     }
   ];
