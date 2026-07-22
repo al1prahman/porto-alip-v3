@@ -19,8 +19,6 @@ export default function ActivityPage() {
   const cursorColor = isDark ? "#ffffff" : "#111111";
   const cursorTextColor = isDark ? "#000000" : "#ffffff";
 
-  // Memetakan ke-26 foto dari folder public/activity/
-  // Perhatikan besar kecil huruf ekstensi (misal: nonton1.JPG menggunakan kapital)
   const eventPhotos = [
     { id: "1", img: "/activity/direktorfilm.jpg", url: "#", height: 350 },
     { id: "2", img: "/activity/event1.jpg", url: "#", height: 500 },
@@ -64,7 +62,8 @@ export default function ActivityPage() {
 
       <Header />
       
-      <main className="max-w-5xl mx-auto px-4 md:px-8 py-12">
+      {/* PERBAIKAN: Mengubah max-w-5xl menjadi max-w-3xl agar sejajar dengan Header */}
+      <main className="max-w-3xl mx-auto px-4 md:px-8 py-12">
         <Link href="/" className="text-gray-400 hover:text-black dark:hover:text-white mb-8 inline-block cursor-none transition-colors">
           ← Back to Home
         </Link>
@@ -74,10 +73,7 @@ export default function ActivityPage() {
           Photos from events, meetups, hobby, and moments outside the IDE.
         </p>
 
-        {/* 
-          Catatan: Tinggi div disesuaikan menjadi h-[2400px] atau lebih 
-          karena 26 foto akan memakan banyak ruang ke bawah 
-        */}
+        {/* Container Masonry */}
         <div className="w-full h-[2600px] md:h-[2200px]">
           <Masonry 
             items={eventPhotos} 

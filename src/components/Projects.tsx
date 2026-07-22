@@ -20,33 +20,34 @@ export default function Projects() {
   const dimColor = isDark ? "#444444" : "#CCCCCC";
 
   const myProjects = {
-    itemCount: 5,
-    item1: {
-      text: "Smart Counter using Machine Learning (AI & Dwell Time)",
-      image: { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" },
-      link: "#",
-    },
-    item2: {
-      text: "Integrated Preschool Administration System and Monitoring Student",
-      image: { src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" },
-      link: "#",
-    },
-    item3: {
-      text: "Fiber Optic Network Management",
-      image: { src: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop" },
-      link: "#",
-    },
-    item4: {
-      text: "Internship Management App ( Campus Project )",
-      image: { src: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=800&auto=format&fit=crop" },
-      link: "#",
-    },
-    item5: {
-      text: "Ai Expense Tracker ( Machine Learning )",
-      image: { src: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop" },
-      link: "#",
-    },
-  };
+  itemCount: 5,
+  item1: {
+    text: "Smart Counter using Machine Learning (AI & Dwell Time)",
+    image: { src: "/projects/smartcounter.png" },
+    link: "/projects/smart-counter",
+  },
+  item2: {
+    text: "Integrated Preschool Administration System and Monitoring Student",
+    image: { src: "/projects/smartpcb1.jpg" },
+    link: "/projects/preschool-admin",
+  },
+  item3: {
+    text: "Fiber Optic Network Management",
+    image: { src: "/projects/fiber2.jpg" },
+    link: "/projects/fiber-optic",
+  },
+  item4: {
+    text: "Internship Management App ( Campus Project )",
+    image: { src: "/projects/sitama4.jpg" },
+    link: "/projects/internship-app",
+  },
+  item5: {
+    text: "Ai Expense Tracker ( Machine Learning )",
+    // Ai Expense tetap menggunakan placeholder sementara
+    image: { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" },
+    link: "/projects/ai-expense",
+  },
+};
 
   return (
 
