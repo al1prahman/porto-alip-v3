@@ -5,7 +5,7 @@ import UserCursor from "@/components/UserCursor";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { SiWordpress, SiReact, SiPython } from "react-icons/si";
+import { SiPython, SiLaravel, SiReact, SiTailwindcss, SiMysql } from "react-icons/si";
 
 export default function ProjectsPage() {
   const { resolvedTheme } = useTheme();
@@ -19,20 +19,42 @@ export default function ProjectsPage() {
   const cursorColor = isDark ? "#ffffff" : "#111111";
   const cursorTextColor = isDark ? "#000000" : "#ffffff";
 
+  // Daftar 5 proyek baru sesuai dengan gambar
   const projects = [
     {
-      slug: "keepr",
-      title: "KEEPR",
-      desc: "Local-first password vault and personal workflow desktop app.",
-      img: "https://images.unsplash.com/photo-1614064641913-6b71f30160cb?q=80&w=800&auto=format&fit=crop",
-      icons: [<SiReact key="react" />]
+      slug: "smart-counter",
+      title: "Smart Counter using Machine Learning (AI & Dwell Time)",
+      desc: "Automated visitor tracking system utilizing YOLO and computer vision to analyze dwell time.",
+      img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
+      icons: [<SiPython key="py" />, <SiMysql key="db" />]
     },
     {
-      slug: "sumgarden",
-      title: "SumGarden",
-      desc: "E-commerce Dessert Shop - UI/UX, Web Development & Branding",
-      img: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop",
-      icons: [<SiWordpress key="wp" />]
+      slug: "preschool-admin",
+      title: "Integrated Preschool Administration System and Monitoring Student",
+      desc: "Smart PCB system designed for comprehensive academic and administrative management.",
+      img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop",
+      icons: [<SiLaravel key="laravel" />, <SiReact key="react" />]
+    },
+    {
+      slug: "fiber-optic",
+      title: "Fiber Optic Network Management",
+      desc: "Web-based infrastructure management tool for mapping and maintaining fiber optic networks.",
+      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
+      icons: [<SiLaravel key="laravel" />, <SiTailwindcss key="tw" />]
+    },
+    {
+      slug: "internship-app",
+      title: "Internship Management App ( Campus Project )",
+      desc: "A centralized platform to manage university student internships, reporting, and evaluations.",
+      img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
+      icons: [<SiReact key="react" />, <SiTailwindcss key="tw" />]
+    },
+    {
+      slug: "ai-expense",
+      title: "Ai Expense Tracker ( Machine Learning )",
+      desc: "Intelligent financial tracker that categorizes expenses autonomously using machine learning models.",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+      icons: [<SiPython key="py" />, <SiReact key="react" />]
     }
   ];
 
@@ -55,15 +77,14 @@ export default function ProjectsPage() {
           ← Back to Home
         </Link>
         
-        <h1 className="text-4xl font-light mb-4">Selected Projects</h1>
+        <h1 className="text-4xl font-light mb-4">Projects</h1>
         <p className="text-gray-500 dark:text-gray-400 mb-12 text-lg">
-          A collection of web apps and sites I've designed, built, and optimized — spanning UI/UX, full-stack development, and AI integration.
+          A collection of systems I've designed and built — spanning intelligent AI integrations, full-stack web applications, and network management.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((proj) => (
             <Link href={`/projects/${proj.slug}`} key={proj.slug} className="cursor-none block group h-full">
-              {/* PERBAIKAN: Mengganti BorderGlow dengan div card minimalis */}
               <div className="h-full bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-2xl overflow-hidden p-4 flex flex-col transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm">
                 
                 <div className="w-full h-48 rounded-xl overflow-hidden mb-4 bg-gray-100 dark:bg-black">
