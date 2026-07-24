@@ -15,6 +15,15 @@ export default function ActivityPage() {
     setMounted(true);
   }, []);
 
+  // --- BAGIAN PENTING YANG TERLEWAT ---
+  // Cegah render komponen Masonry dan lainnya saat masih di server Vercel
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-[#0a0a0a]"></div>
+    );
+  }
+  // ------------------------------------
+
   const isDark = resolvedTheme === "dark";
   const cursorColor = isDark ? "#ffffff" : "#111111";
   const cursorTextColor = isDark ? "#000000" : "#ffffff";
@@ -51,18 +60,15 @@ export default function ActivityPage() {
   return (
     <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white cursor-none transition-colors overflow-x-hidden">
       
-      {mounted && (
-        <UserCursor 
-          name="Hi there!" 
-          size={28} 
-          color={cursorColor} 
-          textColor={cursorTextColor}
-        />
-      )}
+      <UserCursor 
+        name="Hi there!" 
+        size={28} 
+        color={cursorColor} 
+        textColor={cursorTextColor}
+      />
 
       <Header />
       
-      {/* PERBAIKAN: Mengubah max-w-5xl menjadi max-w-3xl agar sejajar dengan Header */}
       <main className="max-w-3xl mx-auto px-4 md:px-8 py-12">
         <Link href="/" className="text-gray-400 hover:text-black dark:hover:text-white mb-8 inline-block cursor-none transition-colors">
           ← Back to Home
