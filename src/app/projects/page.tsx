@@ -79,7 +79,7 @@ export default function ProjectsPage() {
         
         <h1 className="text-4xl font-light mb-4">Projects</h1>
         <p className="text-gray-500 dark:text-gray-400 mb-12 text-lg">
-          A collection of systems I've designed and built — spanning intelligent AI integrations, full-stack web applications, and network management.
+          A collection of systems I've designed and built, spanning intelligent AI integrations, full-stack web applications, and network management.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
