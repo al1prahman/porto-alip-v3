@@ -91,10 +91,14 @@ export default function Hero() {
         . I have a keen interest in and a thirst for keeping up with the ever evolving landscape of technology. I am currently focused on completing my education while continuing to hone my skills.
       </p>
 
-      {/* Tombol Resume */}
-      <button className="relative z-10 bg-[#111] dark:bg-white hover:bg-black dark:hover:bg-gray-200 text-white dark:text-black px-6 py-3 rounded-xl font-medium flex items-center gap-2 transition-all">
+      <a 
+        href="/Alif Rahman - Full Stack Dev.pdf" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-flex relative z-10 bg-[#111] dark:bg-white hover:bg-black dark:hover:bg-gray-200 text-white dark:text-black px-6 py-3 rounded-xl font-medium items-center gap-2 transition-all w-max"
+      >
         View Resume <span>→</span>
-      </button>
+      </a>
     </main>
   );
 }
