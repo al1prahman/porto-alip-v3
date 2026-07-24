@@ -6,7 +6,7 @@ export default function Education() {
   const education = [
     {
       date: "2023 - 2026",
-      degree: "Associate Degree (A.Md.Kom) / Informatics Engineering", // Silakan sesuaikan dengan gelar/jurusan asli Anda
+      degree: "Associate Degree (A.Md.Kom) / Informatics Engineering",
       university: "Semarang State Polytechnic (Politeknik Negeri Semarang)",
       location: "Semarang, Indonesia",
     }
@@ -14,19 +14,11 @@ export default function Education() {
 
   const certifications = [
     {
-      date: "Apr 2026",
-      title: "Machine Learning & Computer Vision Fundamentals",
-      issuer: "Dicoding Indonesia",
-      credentialId: "Credential ID ML-2026-089",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=200&auto=format&fit=crop" // Ganti dengan gambar sertifikat asli
+      date: "Feb 2026 - Feb 2029",
+      title: "MTCNA",
+      issuer: "Mikrotik",
+      credentialId: "Credential ID 2602NA5649",
     },
-    {
-      date: "Mar 2026",
-      title: "Full-Stack Web Development with Laravel & React",
-      issuer: "Tech Academy / Platform Lain",
-      credentialId: "Credential ID FS-2026-102",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=200&auto=format&fit=crop" // Ganti dengan gambar sertifikat asli
-    }
   ];
 
   return (
@@ -98,7 +90,7 @@ export default function Education() {
                 </span>
               </div>
               
-              {/* Kolom Detail & Thumbnail */}
+              {/* Kolom Detail */}
               <div className="md:w-2/3">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">
                   {cert.title}
@@ -107,19 +99,10 @@ export default function Education() {
                   {cert.issuer}
                 </p>
                 {cert.credentialId && (
-                  <p className="text-sm text-gray-500 mt-1 mb-4">
+                  <p className="text-sm text-gray-500 mt-1">
                     {cert.credentialId}
                   </p>
                 )}
-                
-                {/* Thumbnail Sertifikat */}
-                <div className="w-32 h-20 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm mt-3">
-                  <img 
-                    src={cert.image} 
-                    alt={cert.title} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
               </div>
             </motion.div>
           ))}
