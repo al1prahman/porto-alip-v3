@@ -28,12 +28,14 @@ export default function Home() {
     <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white transition-colors duration-300 relative cursor-none">
       
       {mounted && (
-        <UserCursor 
-          name="Hi there!" 
-          size={28} 
-          color={cursorColor} 
-          textColor={cursorTextColor}
-        />
+        <div className="hidden md:block">
+          <UserCursor 
+            name="Hi there!" 
+            size={28} 
+            color={cursorColor} 
+            textColor={cursorTextColor}
+          />
+        </div>
       )}
 
       <Header />
