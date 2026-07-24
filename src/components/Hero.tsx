@@ -9,7 +9,8 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
         
         {/* Kontainer Avatar Bulat */}
-        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100 dark:border-gray-800 shadow-sm shrink-0 cursor-pointer relative z-10">
+        {/* PERUBAHAN: w-32 h-32 diubah menjadi w-36 h-36 md:w-40 md:h-40 */}
+        <div className="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-gray-100 dark:border-gray-800 shadow-sm shrink-0 cursor-pointer relative z-10">
           <PixelTransition
             firstContent={
               <img 
@@ -32,7 +33,6 @@ export default function Hero() {
             aspectRatio="100%"
           />
         </div>
-
         <div>
           {/* PERBAIKAN: Menambahkan dark:text-white dan menggunakan nama yang tepat */}
           <h1 className="text-3xl font-bold flex items-center gap-2 mb-2 text-gray-900 dark:text-white transition-colors">
