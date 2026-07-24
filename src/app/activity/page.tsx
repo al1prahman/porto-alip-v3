@@ -1,11 +1,14 @@
 "use client";
 
 import Header from "@/components/Header";
-import Masonry from "@/components/Masonry";
 import UserCursor from "@/components/UserCursor";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+
+// PERBAIKAN UTAMA: Import komponen Masonry secara dinamis dan matikan SSR
+const Masonry = dynamic(() => import("@/components/Masonry"), { ssr: false });
 
 export default function ActivityPage() {
   const { resolvedTheme } = useTheme();
@@ -14,15 +17,6 @@ export default function ActivityPage() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  // --- BAGIAN PENTING YANG TERLEWAT ---
-  // Cegah render komponen Masonry dan lainnya saat masih di server Vercel
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-white dark:bg-[#0a0a0a]"></div>
-    );
-  }
-  // ------------------------------------
 
   const isDark = resolvedTheme === "dark";
   const cursorColor = isDark ? "#ffffff" : "#111111";
@@ -60,12 +54,14 @@ export default function ActivityPage() {
   return (
     <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white cursor-none transition-colors overflow-x-hidden">
       
-      <UserCursor 
-        name="Hi there!" 
-        size={28} 
-        color={cursorColor} 
-        textColor={cursorTextColor}
-      />
+      {mounted && (
+        <UserCursor 
+          name="Hi there!" 
+          size={28} 
+          color={cursorColor} 
+          textColor={cursorTextColor}
+        />
+      )}
 
       <Header />
       
@@ -79,7 +75,6 @@ export default function ActivityPage() {
           Photos from events, meetups, hobby, and moments outside the IDE.
         </p>
 
-        {/* Container Masonry */}
         <div className="w-full h-[2600px] md:h-[2200px]">
           <Masonry 
             items={eventPhotos} 
