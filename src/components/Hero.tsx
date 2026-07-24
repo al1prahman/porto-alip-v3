@@ -14,7 +14,7 @@ export default function Hero() {
           <PixelTransition
             firstContent={
               <img 
-                src="/avatar2.jpg" 
+                src="/avatar2.JPG" 
                 alt="Profile Avatar" 
                 className="w-full h-full object-cover bg-white dark:bg-[#111]"
               />
