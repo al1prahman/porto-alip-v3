@@ -63,7 +63,14 @@ const TECH_DATA = [
   }
 ];
 
+// Menggabungkan semua item menjadi 1 array datar
 const ALL_TECHS = TECH_DATA.flatMap(cat => cat.items);
+
+// Membagi array menjadi 3 bagian (baris) secara otomatis
+const third = Math.ceil(ALL_TECHS.length / 3);
+const ROW1 = ALL_TECHS.slice(0, third);
+const ROW2 = ALL_TECHS.slice(third, third * 2);
+const ROW3 = ALL_TECHS.slice(third * 2);
 
 export default function Technologies() {
   const [expanded, setExpanded] = useState(false);
@@ -80,7 +87,7 @@ export default function Technologies() {
           {expanded ? (
              <>Collapse <FiList size={16} /></>
           ) : (
-             <>Categorize <FiGrid size={16} /></>
+             <>View All <FiGrid size={16} /></>
           )}
         </button>
       </div>
@@ -89,20 +96,37 @@ export default function Technologies() {
         <AnimatePresence mode="wait">
           {!expanded ? (
             <motion.div 
-              key="compact"
+              key="marquee"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="py-4"
+              className="overflow-hidden mask-edges py-4 flex flex-col gap-4"
             >
-              {/* PERUBAHAN: Menghapus animate-marquee dan w-max, menggantinya dengan flex-wrap */}
-              <div className="flex flex-wrap gap-3 cursor-none">
-                {ALL_TECHS.map((tech, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                  >
+              {/* BARIS 1 - Kecepatan 40 detik */}
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '40s' }}>
+                {[...ROW1, ...ROW1].map((tech, index) => (
+                  <div key={`row1-${index}`} className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap">
+                    <tech.icon style={{ color: tech.color }} size={18} />
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* BARIS 2 - Kecepatan 45 detik (sedikit lebih lambat agar ada efek variasi) */}
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '45s' }}>
+                {[...ROW2, ...ROW2].map((tech, index) => (
+                  <div key={`row2-${index}`} className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap">
+                    <tech.icon style={{ color: tech.color }} size={18} />
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* BARIS 3 - Kecepatan 35 detik (sedikit lebih cepat) */}
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '35s' }}>
+                {[...ROW3, ...ROW3].map((tech, index) => (
+                  <div key={`row3-${index}`} className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap">
                     <tech.icon style={{ color: tech.color }} size={18} />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tech.name}</span>
                   </div>
