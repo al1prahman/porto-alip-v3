@@ -4,13 +4,14 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-gray-100 dark:border-gray-800 border-dashed mt-auto">
+    <footer className="w-full border-t border-gray-100 dark:border-gray-800 border-dashed mt-auto font-sans">
       <div className="max-w-3xl mx-auto px-4 md:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           
           {/* Bagian Kiri: Quote & Info */}
           <div className="space-y-2">
-            <p className="italic text-gray-500 dark:text-gray-400 font-serif">
+            {/* PERBAIKAN: Menghapus class font-serif dari sini */}
+            <p className="italic text-gray-500 dark:text-gray-400">
               "So Surely, with Hardship come Ease"
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-300">
