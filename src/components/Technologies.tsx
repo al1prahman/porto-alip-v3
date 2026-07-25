@@ -47,7 +47,6 @@ const TECH_DATA = [
       { name: "Machine Learning (YOLO)", icon: FaBrain, color: "#FF6F00" },
       { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
       { name: "Prompt Engineering", icon: FiMessageSquare, color: "#10A37F" },
-      // Menggunakan ikon generik untuk PowerBI agar aman
       { name: "PowerBI", icon: FiPieChart, color: "#F2C811" },
       { name: "Data Visualization", icon: FiBarChart2, color: "#FF4B4B" },
     ]
@@ -58,7 +57,6 @@ const TECH_DATA = [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#181717" },
       { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      // Menggunakan ikon generik untuk Canva agar aman
       { name: "Canva", icon: FiLayout, color: "#00C4CC" },
       { name: "Framer", icon: SiFramer, color: "#0055FF" },
     ]
@@ -82,7 +80,7 @@ export default function Technologies() {
           {expanded ? (
              <>Collapse <FiList size={16} /></>
           ) : (
-             <>View All <FiGrid size={16} /></>
+             <>Categorize <FiGrid size={16} /></>
           )}
         </button>
       </div>
@@ -91,18 +89,19 @@ export default function Technologies() {
         <AnimatePresence mode="wait">
           {!expanded ? (
             <motion.div 
-              key="marquee"
+              key="compact"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="overflow-hidden mask-edges py-4"
+              className="py-4"
             >
-              <div className="flex w-max animate-marquee cursor-none hover:[animation-play-state:paused]">
-                {[...ALL_TECHS, ...ALL_TECHS].map((tech, index) => (
+              {/* PERUBAHAN: Menghapus animate-marquee dan w-max, menggantinya dengan flex-wrap */}
+              <div className="flex flex-wrap gap-3 cursor-none">
+                {ALL_TECHS.map((tech, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap"
+                    className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                   >
                     <tech.icon style={{ color: tech.color }} size={18} />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tech.name}</span>
