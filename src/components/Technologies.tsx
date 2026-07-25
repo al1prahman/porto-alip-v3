@@ -63,10 +63,8 @@ const TECH_DATA = [
   }
 ];
 
-// Menggabungkan semua item menjadi 1 array datar
 const ALL_TECHS = TECH_DATA.flatMap(cat => cat.items);
 
-// Membagi array menjadi 3 bagian (baris) secara otomatis
 const third = Math.ceil(ALL_TECHS.length / 3);
 const ROW1 = ALL_TECHS.slice(0, third);
 const ROW2 = ALL_TECHS.slice(third, third * 2);
@@ -103,7 +101,7 @@ export default function Technologies() {
               transition={{ duration: 0.3 }}
               className="overflow-hidden mask-edges py-4 flex flex-col gap-4"
             >
-              {/* BARIS 1 - Kecepatan 40 detik */}
+              {/* BARIS 1 - Kecepatan 40 detik (Berjalan ke Kiri) */}
               <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '40s' }}>
                 {[...ROW1, ...ROW1].map((tech, index) => (
                   <div key={`row1-${index}`} className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap">
@@ -113,8 +111,8 @@ export default function Technologies() {
                 ))}
               </div>
 
-              {/* BARIS 2 - Kecepatan 45 detik (sedikit lebih lambat agar ada efek variasi) */}
-              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '45s' }}>
+              {/* BARIS 2 - Kecepatan 45 detik (PERUBAHAN: animationDirection: 'reverse' agar berjalan ke Kanan) */}
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '45s', animationDirection: 'reverse' }}>
                 {[...ROW2, ...ROW2].map((tech, index) => (
                   <div key={`row2-${index}`} className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap">
                     <tech.icon style={{ color: tech.color }} size={18} />
@@ -123,7 +121,7 @@ export default function Technologies() {
                 ))}
               </div>
 
-              {/* BARIS 3 - Kecepatan 35 detik (sedikit lebih cepat) */}
+              {/* BARIS 3 - Kecepatan 35 detik (Berjalan ke Kiri) */}
               <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-none" style={{ animationDuration: '35s' }}>
                 {[...ROW3, ...ROW3].map((tech, index) => (
                   <div key={`row3-${index}`} className="flex items-center gap-2 px-4 py-2.5 mx-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-sm whitespace-nowrap">
