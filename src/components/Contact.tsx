@@ -4,7 +4,7 @@ import { FiMail, FiMessageCircle, FiArrowRight } from "react-icons/fi";
 
 export default function Contact() {
   return (
-    <section id="contact" className="max-w-3xl mx-auto px-4 md:px-8 py-20 relative z-10">
+    <section id="contact" className="max-w-3xl mx-auto px-4 md:px-8 pt-20 pb-6 relative z-10">
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
         
         {/* PERUBAHAN: Porsi text area diperkecil menjadi md:w-5/12 agar card bisa lebih panjang */}
@@ -65,24 +65,6 @@ export default function Contact() {
             <FiArrowRight className="text-gray-300 dark:text-gray-600 group-hover:text-black dark:group-hover:text-white transition-colors transform group-hover:translate-x-1" />
           </a>
 
-        </div>
-      </div>
-
-      {/* Pembatas Garis Putus-putus & Footer */}
-      <div className="mt-24 pt-8 border-t border-dashed border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-        <div>
-          <p className="text-gray-400 dark:text-gray-500 italic mb-2">
-            "So Surely, with Hardship come Ease" 
-          </p>
-          <p className="text-sm text-gray-400 dark:text-gray-500">
-            <span className="font-medium text-gray-800 dark:text-gray-200">Alif Rahman Maulana</span> <span className="mx-1">/</span> Still sharpening <span className="mx-1">/</span> Semarang, ID
-          </p>
-        </div>
-        
-        <div className="flex items-center gap-4">
-          <div className="px-4 py-1.5 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-full text-xs font-medium text-gray-600 dark:text-gray-400 shadow-sm cursor-none">
-            276 visitors
-          </div>
         </div>
       </div>
     </section>
