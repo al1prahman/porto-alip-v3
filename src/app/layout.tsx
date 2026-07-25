@@ -20,9 +20,6 @@ export default function RootLayout({
       <body className="antialiased flex flex-col min-h-screen">
         <ThemeProvider>
           
-          {/* 1. Header di paling atas */}
-          <Header />
-          
           {/* 2. Main content diberi flex-grow agar mengisi ruang tengah yang kosong */}
           <main className="flex-grow">
             {children}
