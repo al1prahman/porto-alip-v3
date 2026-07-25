@@ -6,13 +6,12 @@ import {
   SiReact, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss,
   SiLaravel, SiPython, SiMysql, SiPostgresql, SiPhp, 
   SiFigma, SiGit, SiGithub, SiOpencv, 
-  SiVite, SiCanva, SiFramer, SiSupabase, SiRust, SiGo, SiPowerbi, 
+  SiVite, SiFramer, SiSupabase, SiRust, SiGo,
   SiTensorflow, SiPytorch, SiScikitlearn
 } from "react-icons/si";
 import { FaBrain } from "react-icons/fa";
-import { FiGrid, FiList, FiBarChart2, FiMessageSquare } from "react-icons/fi";
+import { FiGrid, FiList, FiBarChart2, FiMessageSquare, FiLayout, FiPieChart } from "react-icons/fi";
 
-// PERUBAHAN: Penambahan tech stack baru dan penyesuaian kategori
 const TECH_DATA = [
   {
     category: "FRONTEND",
@@ -31,7 +30,7 @@ const TECH_DATA = [
     items: [
       { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
       { name: "Golang", icon: SiGo, color: "#00ADD8" },
-      { name: "Rust", icon: SiRust, color: "#000000" }, // Warna hitam/putih akan disesuaikan dengan CSS nanti jika perlu
+      { name: "Rust", icon: SiRust, color: "#000000" }, 
       { name: "PHP", icon: SiPhp, color: "#777BB4" },
       { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
@@ -48,7 +47,8 @@ const TECH_DATA = [
       { name: "Machine Learning (YOLO)", icon: FaBrain, color: "#FF6F00" },
       { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
       { name: "Prompt Engineering", icon: FiMessageSquare, color: "#10A37F" },
-      { name: "PowerBI", icon: SiPowerbi, color: "#F2C811" },
+      // Menggunakan ikon generik untuk PowerBI agar aman
+      { name: "PowerBI", icon: FiPieChart, color: "#F2C811" },
       { name: "Data Visualization", icon: FiBarChart2, color: "#FF4B4B" },
     ]
   },
@@ -58,7 +58,8 @@ const TECH_DATA = [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#181717" },
       { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { name: "Canva", icon: SiCanva, color: "#00C4CC" },
+      // Menggunakan ikon generik untuk Canva agar aman
+      { name: "Canva", icon: FiLayout, color: "#00C4CC" },
       { name: "Framer", icon: SiFramer, color: "#0055FF" },
     ]
   }
