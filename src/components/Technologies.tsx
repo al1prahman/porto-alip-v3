@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  SiReact, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3,
+  SiReact, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss,
   SiLaravel, SiPython, SiMysql, SiPostgresql, SiPhp, 
   SiFigma, SiGit, SiGithub, SiOpencv, 
   SiVite, SiFramer, SiSupabase, SiRust, SiGo,
@@ -22,7 +22,7 @@ const TECH_DATA = [
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
       { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
       { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: SiCss3, color: "#1572B6" }, 
+      { name: "CSS3", icon: SiCss, color: "#1572B6" }, 
     ]
   },
   {
