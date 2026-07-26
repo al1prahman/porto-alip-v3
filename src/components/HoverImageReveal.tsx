@@ -46,6 +46,39 @@ interface HoverImageRevealProps {
   style?: CSSProperties;
 }
 
+// Data default yang sudah disesuaikan dengan konteks IT/Developer
+const DEFAULT_ITEMS_DATA: { text: string; src: string }[] = [
+  {
+    text: "./koperasi_merah_putih_ai.ts",
+    src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/8e0d22a8-ac82-4893-90d8-3403f80ec600/w=800",
+  },
+  {
+    text: "./yolo_dwell_time_analysis.py",
+    src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/d6af07a0-4dc5-4de4-07b1-9d2ad6100000/w=800",
+  },
+  {
+    text: "./smart_pcb_system.cpp",
+    src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/c083d83a-f5a4-4434-989f-4eaa9bbe7500/w=800",
+  },
+  {
+    text: "./sumgarden_store.tsx",
+    src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/93bad0e0-e2ab-4e21-de9c-4cb54b028f00/w=800",
+  },
+  {
+    text: "./university_branding.jsx",
+    src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/09a59a65-3c07-4500-f72c-68c824168c00/w=800",
+  },
+];
+
+const DEFAULT_ITEMS: ItemsValue = {
+  itemCount: 5,
+  item1: { text: DEFAULT_ITEMS_DATA[0].text, image: { src: DEFAULT_ITEMS_DATA[0].src } },
+  item2: { text: DEFAULT_ITEMS_DATA[1].text, image: { src: DEFAULT_ITEMS_DATA[1].src } },
+  item3: { text: DEFAULT_ITEMS_DATA[2].text, image: { src: DEFAULT_ITEMS_DATA[2].src } },
+  item4: { text: DEFAULT_ITEMS_DATA[3].text, image: { src: DEFAULT_ITEMS_DATA[3].src } },
+  item5: { text: DEFAULT_ITEMS_DATA[4].text, image: { src: DEFAULT_ITEMS_DATA[4].src } },
+};
+
 const DEFAULT_TRANSITION: MotionTransition = {
   type: "spring",
   stiffness: 400,
@@ -65,20 +98,20 @@ const alignToText: Record<string, CSSProperties["textAlign"]> = {
 };
 
 export default function HoverImageReveal({
-  items,
+  items = DEFAULT_ITEMS,
   font,
-  textColor = "#FFFFFF",
-  dimColor = "#51565A",
-  align = "center",
-  rowGap = 30,
+  textColor = "#4ade80", // terminal-green
+  dimColor = "#8b949e",  // gray text
+  align = "left",        // Diubah menjadi left agar seperti baris kode
+  rowGap = 16,           // Jarak antar item diperkecil
   imageWidth = 400,
   imageHeight = 250,
-  rounded = 16,
+  rounded = 8,           // Sudut tidak terlalu bulat
   offsetX = 200,
   offsetY = 0,
   followStrength = 0,
   transition = DEFAULT_TRANSITION,
-  backgroundColor = "transparent", // Diubah transparan agar menyatu dengan background utama
+  backgroundColor = "transparent", 
   style,
 }: HoverImageRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -91,7 +124,6 @@ export default function HoverImageReveal({
   const x = useSpring(rawX, springCfg);
   const y = useSpring(rawY, springCfg);
 
-  // Ambil data items dari props
   const data = items || { itemCount: 0 };
   const count = Math.max(1, Math.min(MAX_ITEMS, (data.itemCount as number) || 4));
   
@@ -129,7 +161,6 @@ export default function HoverImageReveal({
         justifyContent: "center",
         alignItems: alignToFlex[align],
         gap: `${rowGap}px`,
-        // PERBAIKAN 1: Hapus padding agar rata kiri dengan Hero section
         padding: 0, 
         boxSizing: "border-box",
         cursor: "default",
@@ -152,6 +183,7 @@ export default function HoverImageReveal({
           overflow: "hidden",
           pointerEvents: "none",
           zIndex: 10,
+          border: "1px solid #30363d", // Tambahan border terminal
         }}
         animate={{ opacity: anyActive ? 1 : 0 }}
         transition={transition}
@@ -180,7 +212,7 @@ export default function HoverImageReveal({
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
               ) : (
-                <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#333,#111)" }} />
+                <div style={{ width: "100%", height: "100%", background: "#161b22" }} />
               )}
             </motion.div>
           );
@@ -199,29 +231,30 @@ export default function HoverImageReveal({
       >
         {list.map((item, i) => {
           const isHovered = hovered === i;
-          const color = anyActive ? (isHovered ? textColor : dimColor) : textColor;
+          const color = anyActive ? (isHovered ? textColor : dimColor) : "#c9d1d9"; // Warna text default github/terminal
           
-          // PERBAIKAN 2: Perkecil teks di sini
           const copyStyle: CSSProperties = {
             display: "block",
             color,
             transition: "color 0.2s ease",
             whiteSpace: "normal",
             textAlign: alignToText[align],
-            fontFamily: "var(--font-geist-sans), sans-serif",
-            fontWeight: 500, // Diubah menjadi 500 agar lebih elegan
-            fontSize: "clamp(1.2rem, 2vw, 1.5rem)", // Diperkecil (sekitar 19px - 24px)
+            fontFamily: "var(--font-mono), monospace", // Menggunakan font mono
+            fontWeight: 400,
+            fontSize: "clamp(1rem, 2vw, 1.25rem)", // Ukuran proporsional
             lineHeight: 1.2,
-            letterSpacing: "-0.01em",
           };
           
           const inner = (
             <motion.div
               style={{ position: "relative" }}
-              animate={{ y: isHovered ? "-6px" : "0%" }} // Efek naik diperkecil agar lebih halus
+              animate={{ x: isHovered ? "12px" : "0%" }} // Efek bergeser ke kanan, bukan ke atas
               transition={transition}
             >
-              <span style={copyStyle}>{item.text}</span>
+              <span style={copyStyle}>
+                <span style={{ color: isHovered ? textColor : "#30363d", marginRight: "8px" }}>&gt;</span> 
+                {item.text}
+              </span>
             </motion.div>
           );
           
@@ -232,9 +265,9 @@ export default function HoverImageReveal({
               style={{
                 overflow: "visible",
                 cursor: "none",
-                borderBottom: `1px solid ${dimColor}30`,
+                borderBottom: `1px dashed #30363d`, // Garis putus-putus ala terminal
                 width: "100%",
-                paddingBottom: "12px", // Sedikit dirapatkan
+                paddingBottom: "12px",
               }}
             >
               {item.link ? (
