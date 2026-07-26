@@ -22,12 +22,11 @@ export default function Education() {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-8 py-16 relative z-10 flex flex-col gap-20">
+    <div className="max-w-3xl mx-auto px-4 md:px-8 py-16 relative z-10 flex flex-col gap-20 border-t border-terminal-border/50">
       
-      {/* --- SECTION EDUCATION --- */}
       <section id="education">
-        <div className="mb-10 border-b border-gray-100 dark:border-gray-800 pb-4">
-          <h2 className="text-3xl font-light text-gray-800 dark:text-gray-200">Education</h2>
+        <div className="mb-10 border-b border-terminal-border pb-4">
+          <h2 className="text-3xl font-display font-bold text-gray-200">Education</h2>
         </div>
 
         <div className="space-y-12">
@@ -40,22 +39,20 @@ export default function Education() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex flex-col md:flex-row gap-2 md:gap-8 cursor-none"
             >
-              {/* Kolom Tanggal */}
               <div className="md:w-1/3 shrink-0 pt-1">
-                <span className="text-sm font-medium text-gray-400 dark:text-gray-500">
+                <span className="font-mono text-sm text-terminal-green">
                   {edu.date}
                 </span>
               </div>
               
-              {/* Kolom Detail */}
               <div className="md:w-2/3">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">
+                <h3 className="text-lg font-bold text-gray-200 mb-1">
                   {edu.degree}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="font-mono text-sm text-gray-400">
                   {edu.university}
                 </p>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="font-mono text-xs text-gray-500 mt-1">
                   {edu.location}
                 </p>
               </div>
@@ -64,11 +61,10 @@ export default function Education() {
         </div>
       </section>
 
-      {/* --- SECTION CERTIFICATIONS --- */}
       <section id="certifications">
-        <div className="flex justify-between items-end mb-10 border-b border-gray-100 dark:border-gray-800 pb-4">
-          <h2 className="text-3xl font-light text-gray-800 dark:text-gray-200">Certifications</h2>
-          <button className="text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors cursor-none">
+        <div className="flex justify-between items-end mb-10 border-b border-terminal-border pb-4">
+          <h2 className="text-3xl font-display font-bold text-gray-200">Certifications</h2>
+          <button className="font-mono text-sm text-gray-500 hover:text-terminal-orange transition-colors cursor-none">
             View All →
           </button>
         </div>
@@ -83,23 +79,21 @@ export default function Education() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex flex-col md:flex-row gap-2 md:gap-8 cursor-none"
             >
-              {/* Kolom Tanggal */}
               <div className="md:w-1/3 shrink-0 pt-1">
-                <span className="text-sm font-medium text-gray-400 dark:text-gray-500">
+                <span className="font-mono text-sm text-terminal-green">
                   {cert.date}
                 </span>
               </div>
               
-              {/* Kolom Detail */}
               <div className="md:w-2/3">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">
+                <h3 className="text-lg font-bold text-gray-200 mb-1">
                   {cert.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="font-mono text-sm text-gray-400">
                   {cert.issuer}
                 </p>
                 {cert.credentialId && (
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="font-mono text-xs text-gray-500 mt-1">
                     {cert.credentialId}
                   </p>
                 )}
@@ -108,7 +102,6 @@ export default function Education() {
           ))}
         </div>
       </section>
-
     </div>
   );
 }
