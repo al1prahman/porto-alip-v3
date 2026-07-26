@@ -17,9 +17,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* Masukkan variabel font ke dalam className body */}
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased flex flex-col min-h-screen bg-[#0d1117] text-gray-300`}>
-        {/* ... */}
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased flex flex-col min-h-screen bg-terminal-bg text-gray-300`}>
+        {/* Memaksa tema menjadi dark karena ini adalah tema terminal */}
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
