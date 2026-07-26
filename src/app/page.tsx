@@ -1,52 +1,42 @@
 "use client";
 
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Technologies from "@/components/Technologies";
-import Education from "@/components/Education"; // <-- Import komponen baru
+import Education from "@/components/Education"; 
 import Activity from "@/components/Activity";
 import Contact from "@/components/Contact";
 import UserCursor from "@/components/UserCursor";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const isDark = resolvedTheme === "dark";
-  const cursorColor = isDark ? "#ffffff" : "#111111";
-  const cursorTextColor = isDark ? "#000000" : "#ffffff";
-
   return (
-    <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white transition-colors duration-300 relative cursor-none">
+    <div className="min-h-screen bg-terminal-bg text-gray-300 transition-colors duration-300 relative cursor-none">
       
       {mounted && (
         <div className="hidden md:block">
           <UserCursor 
             name="Hi there!" 
             size={28} 
-            color={cursorColor} 
-            textColor={cursorTextColor}
+            color="#4ade80" // terminal-green
+            textColor="#0d1117" // terminal-bg
           />
         </div>
       )}
 
-      <Header />
+      {/* Header tidak perlu dipanggil di sini lagi karena sudah ada di layout.tsx */}
       <Hero />
       <Projects />
       <Experience />
       <Technologies />
-      
-      {/* Tambahkan Education di sini */}
       <Education /> 
-      
       <Activity />
       <Contact />
       
