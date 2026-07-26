@@ -1,13 +1,10 @@
 "use client";
 
-import Header from "@/components/Header";
 import UserCursor from "@/components/UserCursor";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-// Data lengkap untuk kelima project
 const projectsData: Record<string, any> = {
   "smart-counter": {
     title: "Smart Counter using Machine Learning (AI & Dwell Time)",
@@ -71,71 +68,74 @@ export default function ProjectDetail() {
   const slug = params.slug as string;
   const project = projectsData[slug];
 
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Jika URL tidak cocok dengan salah satu slug di atas, tampilkan halaman 404
   if (!project) {
     notFound();
   }
 
-  const isDark = resolvedTheme === "dark";
-  const cursorColor = isDark ? "#ffffff" : "#111111";
-  const cursorTextColor = isDark ? "#000000" : "#ffffff";
-
   return (
-    <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white cursor-none transition-colors">
+    <div className="min-h-screen bg-terminal-bg text-gray-300 cursor-none transition-colors">
       
       {mounted && (
         <UserCursor 
           name="Hi there!" 
           size={28} 
-          color={cursorColor} 
-          textColor={cursorTextColor}
+          color="#4ade80" 
+          textColor="#0d1117"
         />
       )}
-
-      <Header />
       
       <main className="max-w-3xl mx-auto px-4 md:px-8 py-12">
-        <Link href="/projects" className="text-gray-400 hover:text-black dark:hover:text-white mb-8 inline-block cursor-none transition-colors">
-          ← Back to Projects
+        <Link href="/projects" className="font-mono text-sm text-gray-500 hover:text-terminal-green mb-10 inline-flex items-center gap-2 cursor-none transition-colors">
+          <span>&lt;-</span> cd ../projects
         </Link>
         
         {/* Foto Proyek */}
-        <div className="w-full h-[250px] md:h-[400px] overflow-hidden rounded-xl mb-8 border border-gray-200 dark:border-gray-800">
+        <div className="w-full h-[250px] md:h-[400px] overflow-hidden rounded-xl mb-8 border border-terminal-border bg-terminal-card p-2">
           <img 
             src={project.img} 
             alt={project.title} 
-            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            className="w-full h-full object-cover rounded-lg opacity-90 transition-transform duration-700 hover:scale-105 hover:opacity-100"
           />
         </div>
 
         {/* Judul & Deskripsi */}
-        <h1 className="text-3xl md:text-4xl font-light mb-4">{project.title}</h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-10 text-lg leading-relaxed">
+        <h1 className="text-3xl md:text-4xl font-display font-bold mb-5 text-white">{project.title}</h1>
+        <p className="font-mono text-sm text-gray-400 mb-10 leading-relaxed">
           {project.overview}
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-terminal-border pt-8">
           {/* Tech Stack */}
           <div>
-            <h3 className="text-xl font-medium mb-4">Tech Stack</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              {project.tech}
-            </p>
+            <h3 className="font-mono text-xs text-terminal-green mb-4 uppercase tracking-widest">
+              $ cat tech_stack.txt
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.split(", ").map((t: string, i: number) => (
+                <span key={i} className="px-3 py-1 bg-terminal-card border border-terminal-border rounded font-mono text-xs text-gray-300">
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Key Features */}
           <div>
-            <h3 className="text-xl font-medium mb-4">Key Features</h3>
-            <ul className="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-300 marker:text-gray-400">
+            <h3 className="font-mono text-xs text-terminal-orange mb-4 uppercase tracking-widest">
+              $ ls -l features/
+            </h3>
+            <ul className="list-none space-y-3 font-mono text-sm text-gray-400">
               {project.features.map((feature: string, index: number) => (
-                <li key={index}>{feature}</li>
+                <li key={index} className="flex gap-2 items-start">
+                  <span className="text-terminal-border mt-0.5">&gt;</span>
+                  <span>{feature}</span>
+                </li>
               ))}
             </ul>
           </div>

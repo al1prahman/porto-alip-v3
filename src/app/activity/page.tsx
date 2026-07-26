@@ -1,26 +1,18 @@
 "use client";
 
-import Header from "@/components/Header";
 import UserCursor from "@/components/UserCursor";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-// PERBAIKAN UTAMA: Import komponen Masonry secara dinamis dan matikan SSR
 const Masonry = dynamic(() => import("@/components/Masonry"), { ssr: false });
 
 export default function ActivityPage() {
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const isDark = resolvedTheme === "dark";
-  const cursorColor = isDark ? "#ffffff" : "#111111";
-  const cursorTextColor = isDark ? "#000000" : "#ffffff";
 
   const eventPhotos = [
     { id: "1", img: "/activity/direktorfilm.jpg", url: "#", height: 350 },
@@ -52,27 +44,25 @@ export default function ActivityPage() {
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white cursor-none transition-colors overflow-x-hidden">
+    <div className="min-h-screen bg-terminal-bg text-gray-300 cursor-none transition-colors overflow-x-hidden">
       
       {mounted && (
         <UserCursor 
           name="Hi there!" 
           size={28} 
-          color={cursorColor} 
-          textColor={cursorTextColor}
+          color="#4ade80" 
+          textColor="#0d1117"
         />
       )}
 
-      <Header />
-      
       <main className="max-w-3xl mx-auto px-4 md:px-8 py-12">
-        <Link href="/" className="text-gray-400 hover:text-black dark:hover:text-white mb-8 inline-block cursor-none transition-colors">
-          ← Back to Home
+        <Link href="/" className="font-mono text-sm text-gray-500 hover:text-terminal-green mb-10 inline-flex items-center gap-2 cursor-none transition-colors">
+          <span>&lt;-</span> cd ~/home
         </Link>
         
-        <h1 className="text-4xl font-light mb-4">Events</h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-12 text-lg">
-          Photos from events, meetups, hobby, and moments outside the IDE.
+        <h1 className="text-4xl font-display font-bold mb-4 text-white">Events</h1>
+        <p className="font-mono text-sm text-gray-400 mb-12">
+          /* Photos from events, meetups, hobby, and moments outside the IDE. */
         </p>
 
         <div className="w-full h-[2600px] md:h-[2200px]">

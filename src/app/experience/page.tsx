@@ -3,20 +3,14 @@
 import Header from "@/components/Header";
 import UserCursor from "@/components/UserCursor";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function ExperiencePage() {
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const isDark = resolvedTheme === "dark";
-  const cursorColor = isDark ? "#ffffff" : "#111111";
-  const cursorTextColor = isDark ? "#000000" : "#ffffff";
 
   const experiences = [
     {
@@ -63,57 +57,60 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-white dark:bg-[#0a0a0a] text-black dark:text-white cursor-none transition-colors">
+    <div className="min-h-screen bg-terminal-bg text-gray-300 cursor-none transition-colors">
       
       {mounted && (
         <UserCursor 
           name="Hi there!" 
           size={28} 
-          color={cursorColor} 
-          textColor={cursorTextColor}
+          color="#4ade80" 
+          textColor="#0d1117"
         />
       )}
 
-      <Header />
+      {/* Header sudah ada di layout.tsx, tapi jika Anda masih membutuhkannya spesifik di halaman ini, panggil di sini. Jika tidak, hapus tag <Header /> */}
       
       <main className="max-w-3xl mx-auto px-4 md:px-8 py-12">
-        <Link href="/" className="text-gray-400 hover:text-black dark:hover:text-white mb-8 inline-block cursor-none transition-colors">
-          ← Back to Home
+        <Link href="/" className="font-mono text-sm text-gray-500 hover:text-terminal-green mb-10 inline-flex items-center gap-2 cursor-none transition-colors">
+          <span>&lt;-</span> cd ~/home
         </Link>
         
-        <h1 className="text-4xl font-light mb-4">Experience</h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-12 text-lg">
-          Where I've worked, what I built, and the impact I delivered.
+        <h1 className="text-4xl font-display font-bold mb-4 text-white">Experience</h1>
+        <p className="font-mono text-sm text-gray-400 mb-12">
+          /* Where I've worked, what I built, and the impact I delivered. */
         </p>
 
-        {/* Timeline Container dengan Garis Kiri */}
-        <div className="relative border-l border-gray-200 dark:border-gray-800 ml-3 md:ml-4 space-y-14 pb-12">
+        {/* Timeline Container dengan Garis Kiri bergaya Terminal */}
+        <div className="relative border-l border-terminal-border ml-3 md:ml-4 space-y-14 pb-12">
           
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 md:pl-12 group">
               {/* Titik Timeline */}
-              <div className="absolute w-3 h-3 bg-black dark:bg-white rounded-full -left-1.5 top-1.5 border-4 border-white dark:border-[#0a0a0a] box-content transition-transform group-hover:scale-125 duration-300"></div>
+              <div className="absolute w-3 h-3 bg-terminal-bg rounded-full -left-[1.1rem] top-1.5 border-[3px] border-terminal-border group-hover:border-terminal-green box-content transition-colors duration-300"></div>
               
               {/* Tanggal */}
-              <p className="text-sm text-gray-400 mb-2 transition-colors group-hover:text-black dark:group-hover:text-white">
-                {exp.date}
+              <p className="font-mono text-xs text-terminal-green mb-2">
+                $ {exp.date}
               </p>
               
               {/* Detail Peran & Perusahaan */}
-              <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-1">
+              <h3 className="text-xl font-bold text-gray-200 mb-1">
                 {exp.role}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 font-medium">
-                {exp.company}
+              <p className="font-mono text-sm text-terminal-orange mb-1">
+                @ {exp.company}
               </p>
-              <p className="text-sm text-gray-500 mt-1 mb-4">
+              <p className="font-mono text-xs text-gray-500 mb-5">
                 {exp.location}
               </p>
               
               {/* List Jobdesk */}
-              <ul className="list-disc list-outside ml-4 space-y-2 text-gray-500 dark:text-gray-400 text-sm leading-relaxed marker:text-gray-300 dark:marker:text-gray-600">
+              <ul className="list-none space-y-3 font-mono text-sm text-gray-400 leading-relaxed">
                 {exp.responsibilities.map((resp, idx) => (
-                  <li key={idx}>{resp}</li>
+                  <li key={idx} className="flex gap-2">
+                    <span className="text-terminal-border">&gt;</span>
+                    <span>{resp}</span>
+                  </li>
                 ))}
               </ul>
             </div>
