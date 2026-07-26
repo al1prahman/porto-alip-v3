@@ -6,8 +6,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-geist-sans), sans-serif;
-  color: #111;
+  /* Font akan ditarik dari class bawaan Next.js Tailwind (var font-inter) */
+  background-color: #0d1117;
+  color: #c9d1d9; /* Warna abu-abu terang gaya github/terminal */
 }
 
 * {
